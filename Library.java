@@ -38,11 +38,17 @@ public class Library {
 			for (Item item : collection) {
 				if (item instanceof IBorrowable) { // not all items implement IBorrowed check needed
 					if (!((IBorrowable) item).isBorrowed()) { // if book not borrowed
-						System.out.println(item);
-						
-					}
+						Book book = (Book) item;
+						System.out.println("Book - Title: " + book.getTitle() + ", Author: " + book.getAuthor() + ", ISBN: " + book.getISBN() + ", Publication Year: " + book.getPublicationYear());
+					} 
+					
+				} else if (item instanceof Magazine) {
+					Magazine magazine = (Magazine) item;
+					System.out.println("Magazine - Title: " + magazine.getTitle() + ", Issue Number: " + magazine.getIssueNumber() + ", Publication Year: " + magazine.getPublicationYear());
+					
+				//System.out.println(item); // print if no items
 				} else {
-					System.out.println(item); // print non borrowable items
+					System.out.print("No Items available");
 				}
 			}
 		}
@@ -64,7 +70,7 @@ public class Library {
 				}
 			}
 		}
-		return "Item not found.";
+		return "Item not found. \n";
 		
 	}
 	
