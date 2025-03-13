@@ -31,6 +31,9 @@ public class Main {
         System.out.println(library.findItemByTitle("the great gatsby"));
         System.out.println(library.findItemByTitle("1984"));
 
+	// Test item availability
+	library.listAvailableItems();
+
         // Test with a non-existent title
         System.out.println(library.findItemByTitle("Harry Potter"));
 
